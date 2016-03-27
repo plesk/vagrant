@@ -10,6 +10,6 @@ Here is an example on how to build the virtual machine:
 
 # Access
 
-Login URL: http://localhost:8880
+Login URL: [http://localhost:8880](http://localhost:8880)
 
 Credentials: admin / changeme

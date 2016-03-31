@@ -4,7 +4,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "puphpet/debian75-x64"
+  config.vm.box = "plesk/plesk-12.5"
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 1024
@@ -18,6 +18,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 3306, host: 3306
   config.vm.network "forwarded_port", guest: 8447, host: 8447
 
-  config.vm.provision "shell", path: "scripts/install_plesk.sh"
-  config.vm.provision "shell", path: "scripts/configure_plesk.sh"
+  config.vm.provision "shell", path: "../scripts/install_updates.sh"
 end

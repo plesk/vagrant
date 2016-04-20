@@ -8,6 +8,10 @@ Here is an example on how to build the virtual machine:
 
     cd 12.5 ; vagrant up
 
+If you want to build an image from scratch, Vagrantfile.dev can be used:
+
+    cd preview ; VAGRANT_VAGRANTFILE=Vagrantfile.dev vagrant up
+
 # Access
 
 Login URL: [http://localhost:8880](http://localhost:8880)

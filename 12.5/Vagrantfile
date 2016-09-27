@@ -4,7 +4,8 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "plesk/plesk-12.5"
+  config.vm.box      = "plesk/plesk-12.5"
+  config.vm.hostname = "plesk-12.5.vagrant.vm"
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 1024

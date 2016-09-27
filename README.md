@@ -14,6 +14,6 @@ If you want to build an image from scratch, Vagrantfile.dev can be used:
 
 # Access
 
-Login URL: [http://localhost:8880](http://localhost:8880)
+Login URL: [https://localhost:8880](https://localhost:8880)
 
 Credentials: admin / changeme

@@ -20,6 +20,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 3306, host: 3306
   config.vm.network "forwarded_port", guest: 8447, host: 8447
 
-  config.vm.provision "shell", path: "../scripts/install_plesk.sh", args: "PLESK_17_0_11"
+  config.vm.provision "shell", path: "../scripts/install_plesk.sh", args: "PLESK_17_0_17"
   config.vm.provision "shell", path: "../scripts/configure_plesk.sh"
 end

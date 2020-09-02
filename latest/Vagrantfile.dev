@@ -1,14 +1,16 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+### Copyright 1999-2020. Plesk International GmbH.
 
 VAGRANTFILE_API_VERSION = "2"
+LICENSE = ENV["LICENSE"]
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "plesk/plesk-12.5"
+  config.vm.box = "debian/buster64"
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 1024
-    v.name = "plesk-12.5"
+    v.name = "plesk-latest"
   end
 
   config.ssh.insert_key = false
@@ -20,5 +22,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 3306, host: 3306
   config.vm.network "forwarded_port", guest: 8447, host: 8447
 
-  config.vm.provision "shell", path: "../scripts/install_updates.sh"
+  config.vm.provision "shell", path: "../scripts/install_plesk.sh"
+  config.vm.provision "shell", path: "../scripts/configure_plesk.sh", args: LICENSE
 end

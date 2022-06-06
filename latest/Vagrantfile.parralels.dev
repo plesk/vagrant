@@ -3,14 +3,15 @@
 ### Copyright 1999-2020. Plesk International GmbH.
 
 VAGRANTFILE_API_VERSION = "2"
-LICENSE = ENV["LICENSE"]
+LICENSE  = ENV["LICENSE"]
+BOX_BASE = "bento/ubuntu-20.04-arm64"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "debian/buster64"
+  config.vm.box = BOX_BASE
 
-  config.vm.provider "virtualbox" do |v|
+  config.vm.provider "parallels" do |v|
     v.memory = 1024
-    v.name = "plesk-latest"
+    v.name   = "plesk-latest"
   end
 
   config.ssh.insert_key = false

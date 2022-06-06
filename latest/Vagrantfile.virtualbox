@@ -3,9 +3,10 @@
 ### Copyright 1999-2020. Plesk International GmbH.
 
 VAGRANTFILE_API_VERSION = "2"
+BOX_BASE = "plesk/plesk-latest"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "plesk/plesk-latest"
+  config.vm.box = BOX_BASE
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 1024
